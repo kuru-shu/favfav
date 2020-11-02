@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TweetApp</title>
+    <title>Fav-Fav</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +13,7 @@
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("TweetApp", "/posts/index") %>
+          <%= link_to("TweetApp", "/") %>
         <% else %>
           <%= link_to("TweetApp", "/") %>
         <% end %>
