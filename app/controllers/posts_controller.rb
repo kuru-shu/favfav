@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(content: params[:content],user_id: @current_user.id)
+    @post = Post.new(content: params[:content],user_id: @current_user.id,title: params[:title],category: params[:category])
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
@@ -26,13 +26,17 @@ class PostsController < ApplicationController
     end
   end
   
+  
+
   def edit
     @post = Post.find_by(id: params[:id])
   end
   
   def update
     @post = Post.find_by(id: params[:id])
+    @post.title=params[:title]
     @post.content = params[:content]
+    @post.category=params[:category]
     if @post.save
       flash[:notice] = "投稿を編集しました"
       redirect_to("/posts/index")

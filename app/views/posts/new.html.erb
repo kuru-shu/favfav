@@ -9,7 +9,22 @@
               <%= message %>
             </div>
           <% end %>
-          
+          <p>タイトル</p>
+          <input name="title" value="<%= @post.title %>">
+          <p>カテゴリ</p>
+          <select name="category">
+            <option value="映画">映画</option>
+            <option value="ドラマ">ドラマ</option>
+            <option value="小説">小説</option>
+            <option value="マンガ">マンガ</option>
+            <option value="音楽">音楽</option>
+            <option value="ゲーム">ゲーム</option>
+            <option value="スポーツ">スポーツ</option>
+            <option value="料理">料理</option>
+            <option value="その他">その他</option>
+          </select>
+
+          <p>本文</p>
           <textarea name="content"><%= @post.content %></textarea>
           <input type="submit" value="投稿">
         </div>
